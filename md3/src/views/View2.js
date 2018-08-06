@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import ViewName from "./../components/ViewName";
-import MarkdownDocs from "./../modules/components/MarkdownDocs";
+import ReactMarkdown from "react-markdown";
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -20,7 +20,7 @@ function View2(props) {
     <div>
       <ViewName viewName={viewName} />
       <div className={classes.root}>
-        <MarkdownDocs markdown={markdown} />
+        <ReactMarkdown source={markdown} />
       </div>
     </div>
   );
