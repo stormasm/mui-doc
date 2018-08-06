@@ -2,9 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import DataView from "./DataView";
 
-const template =
-  "https://raw.githubusercontent.com/stormasm/ghdata/master/markdown/data1/";
-
 class DataViewWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +20,7 @@ class DataViewWrapper extends React.Component {
     this.setState({ isLoading: true });
     this.setState({ viewName: nextProps.view });
 
-    const url = template + nextProps.view + ".md";
+    const url = `https://raw.githubusercontent.com/stormasm/${nextProps.view}/master/README.md`;
 
     fetch(url)
       .then(response => {
@@ -43,7 +40,7 @@ class DataViewWrapper extends React.Component {
     this.setState({ isLoading: true });
     this.setState({ viewName: this.props.view });
 
-    const url = template + this.state.viewName + ".md";
+    const url = `https://raw.githubusercontent.com/stormasm/${this.props.view}/master/README.md`;
 
     fetch(url)
       .then(response => {
