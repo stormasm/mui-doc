@@ -64,7 +64,7 @@ class MenuAppBar extends React.Component {
               color="inherit"
               className={classes.flex}
             >
-              Title
+              Material-UI Tutorial Readme Files
             </Typography>
             <div>
               <Typography
