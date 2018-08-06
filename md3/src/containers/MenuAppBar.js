@@ -95,18 +95,18 @@ class MenuAppBar extends React.Component {
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "view1" }}>
-                    View 1
+                  <Link className={classes.link} to={{ pathname: "ghw-autosuggest" }}>
+                    ghw-autosuggest
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "view2" }}>
-                    View 2
+                  <Link className={classes.link} to={{ pathname: "ghw-drawer" }}>
+                    ghw-drawer
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "view3" }}>
-                    View 3
+                  <Link className={classes.link} to={{ pathname: "ghw-menu" }}>
+                    ghw-menu
                   </Link>
                 </MenuItem>
               </Menu>
@@ -116,9 +116,9 @@ class MenuAppBar extends React.Component {
 
         <div>
           <Route exact path="/" component={Home} />
-          <Route path={"/view1"} component={ShowTheLocation} />
-          <Route path={"/view2"} component={ShowTheLocation} />
-          <Route path={"/view3"} component={ShowTheLocation} />
+          <Route path={"/ghw-autosuggest"} component={ShowTheLocation} />
+          <Route path={"/ghw-drawer"} component={ShowTheLocation} />
+          <Route path={"/ghw-menu"} component={ShowTheLocation} />
         </div>
       </div>
     );
