@@ -6,9 +6,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { Route, Link } from "react-router-dom";
+import { Redirect, Route, Link } from "react-router-dom";
 import ShowTheLocation from "./../components/ShowTheLocation";
-import Home from "./../components/Home";
 
 const styles = {
   root: {
@@ -25,14 +24,6 @@ const styles = {
     textDecoration: "none"
   }
 };
-
-/*
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
-*/
 
 class MenuAppBar extends React.Component {
   constructor(props) {
@@ -95,12 +86,36 @@ class MenuAppBar extends React.Component {
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "ghw-autosuggest" }}>
+                  <Link className={classes.link} to={{ pathname: "mui-md" }}>
+                    mui-md
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={this.handleClose}>
+                  <Link
+                    className={classes.link}
+                    to={{ pathname: "mui-drawer" }}
+                  >
+                    mui-drawer
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={this.handleClose}>
+                  <Link className={classes.link} to={{ pathname: "mui-menu" }}>
+                    mui-menu
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={this.handleClose}>
+                  <Link
+                    className={classes.link}
+                    to={{ pathname: "ghw-autosuggest" }}
+                  >
                     ghw-autosuggest
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "ghw-drawer" }}>
+                  <Link
+                    className={classes.link}
+                    to={{ pathname: "ghw-drawer" }}
+                  >
                     ghw-drawer
                   </Link>
                 </MenuItem>
@@ -115,7 +130,13 @@ class MenuAppBar extends React.Component {
         </AppBar>
 
         <div>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={() => <Redirect to="/mui-doc" />} />
+          <Route path={"/mui-doc"} component={ShowTheLocation} />
+
+          <Route path={"/mui-md"} component={ShowTheLocation} />
+          <Route path={"/mui-drawer"} component={ShowTheLocation} />
+          <Route path={"/mui-menu"} component={ShowTheLocation} />
+
           <Route path={"/ghw-autosuggest"} component={ShowTheLocation} />
           <Route path={"/ghw-drawer"} component={ShowTheLocation} />
           <Route path={"/ghw-menu"} component={ShowTheLocation} />
